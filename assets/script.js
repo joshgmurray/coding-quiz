@@ -132,6 +132,7 @@ function end() {
 
 function saveScore() {
     var scorename = document.getElementById("scorename").value;
+    document.getElementById("scoreSave").innerHTML = "";
     scores.push({label: scorename, score: score});
     high = score;
     document.getElementById("high").innerHTML = "high score: " + high
@@ -154,16 +155,17 @@ generateBtn.addEventListener("click", updateQuestion);
 
 historyBtn.addEventListener("click", function() {
     scores = JSON.parse(localStorage.getItem('score')) || []
+    console.log("testing", scores)
     var scoreHistory = document.getElementById("scoreHistory");
-    var str = '';
+    var outputString = '';
     if (scores.length) {
         for (let index = 0; index < scores.length; index++) {
             const element = scores[index];
-            str += '<p>' + element.label; +
+            outputString += '<p>' + element.label +
                 ' ' + element.score + '</p>';
         }
     } else {
-        str = "<p>no history</p>"
+        outputString = "<p>no history</p>"
     }
-    scoreHistory.innerHTML = str;
+    scoreHistory.innerHTML = outputString;
 });
