@@ -1,7 +1,11 @@
 var i = 0;
 var rightAnswers = 0;
-var TIME_VALUE = 10;
+var TIME_VALUE = 100;
 var time = TIME_VALUE;
+
+var scores = JSON.parse(localStorage.getItem('score')) || [];
+var high = scores.length ? Math.max(...scores.map(o => o.score)) : 'no score'
+console.log('hi ===',high, scores)
 
 var questions = [
   {
@@ -47,6 +51,7 @@ var questions = [
 ];
 
 var generateBtn = document.getElementById("submit");
+var historyBtn = document.getElementById("history");
 
 var score = 0;
 
@@ -57,7 +62,7 @@ var updateQuestion = () => {
         time--;
         console.log("time ===", time);
         document.getElementById("timer").innerHTML = time;
-        if (time == 0) {
+        if (time == 0 || i == questions.length) {
           clearInterval(id);
           end();
         }
@@ -79,10 +84,12 @@ var updateQuestion = () => {
         console.log("answer clicked");
         if (questions[i].correctAnswer === j) {
           console.log("correct");
+          document.getElementById("response").innerHTML = "correct";
           score++;
         } else {
           console.log("incorrect");
           score--;
+          document.getElementById("response").innerHTML = "incorrect";
           time -= 10;
         }
         i++;
@@ -99,6 +106,11 @@ var updateQuestion = () => {
 };
 
 function end() {
+    if (high < score || high == 'no score') {
+        document.getElementById("scoreSave").innerHTML =
+            "<input id='scorename' type='text'/>" +
+            "<p><button onClick='saveScore()'>save</button></p>"
+    }
   document.getElementById("result").innerHTML =
     "<h2>You finished. Your score is <strong>" +
     score +
@@ -108,12 +120,40 @@ function end() {
     "<p><button onClick='restart()' id='restart'>restart</button></p>";
 }
 
+function saveScore() {
+    var scorename = document.getElementById("scorename").value;
+    scores.push({lable: scorename, score: score});
+    high = score;
+    document.getElementById("high").innerHTML = "high score: " + high
+    localStorage.setItem('score', JSON.stringify(scores))
+}
+
 function restart() {
   i = 0;
   score = 0;
   time = TIME_VALUE;
   document.getElementById("display").innerHTML = "";
   document.getElementById("result").innerHTML = "";
+  document.getElementById("response").innerHTML = "";
+
+  document.getElementById("high").innerHTML = "high score: " + high
 }
 
+document.getElementById("high").innerHTML = "high score: " + high;
 generateBtn.addEventListener("click", updateQuestion);
+
+historyBtn.addEventListener("click", function() {
+    scores = JSON.parse(localStorage.getItem('score')) || []
+    var scoreHistory = document.getElementById("scoreHistory");
+    var str = '';
+    if (scores.length) {
+        for (let index = 0; index < scores.length; index++) {
+            const element = scores[index];
+            str += '<p>' + element.lable +
+                ' ' + element.score + '</p>';
+        }
+    } else {
+        str = "<p>no history</p>"
+    }
+    scoreHistory.innerHTML = str;
+});
