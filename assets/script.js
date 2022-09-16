@@ -16,12 +16,17 @@ var questions = [
       "3. For Loops",
       "4. console.log",
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
   },
   {
     text: "Commonly used data types DO NOT include:",
-    answers: ["1. Strings", "2. Booleans", "3. Alerts", "4. Numbers"],
-    correctAnswer: 3,
+    answers: [
+        "1. Strings", 
+        "2. Booleans", 
+        "3. Alerts", 
+        "4. Numbers",
+    ],
+    correctAnswer: 2,
   },
   {
     text: "Arrays in JavaScript can be used to store:",
@@ -31,7 +36,7 @@ var questions = [
       "3. Booleans",
       "4. All of the Above",
     ],
-    correctAnswer: 0,
+    correctAnswer: 3,
   },
   {
     text: "The condition if an if/else statement is enclosed with:",
@@ -45,8 +50,13 @@ var questions = [
   },
   {
     text: "String values must be enclosed within  _____ when being assigned to variables.",
-    answers: ["1. Commas", "2. Curly Brackets", "3. Quotes", "4. Parenthesis"],
-    correctAnswer: 2,
+    answers: [
+        "1. Commas", 
+        "2. Curly Brackets", 
+        "3. Quotes", 
+        "4. Parenthesis",
+    ],
+    correctAnswer: 1,
   },
 ];
 
@@ -88,7 +98,7 @@ var updateQuestion = () => {
           score++;
         } else {
           console.log("incorrect");
-          score--;
+          score;
           document.getElementById("response").innerHTML = "incorrect";
           time -= 10;
         }
@@ -122,7 +132,7 @@ function end() {
 
 function saveScore() {
     var scorename = document.getElementById("scorename").value;
-    scores.push({lable: scorename, score: score});
+    scores.push({label: scorename, score: score});
     high = score;
     document.getElementById("high").innerHTML = "high score: " + high
     localStorage.setItem('score', JSON.stringify(scores))
@@ -149,7 +159,7 @@ historyBtn.addEventListener("click", function() {
     if (scores.length) {
         for (let index = 0; index < scores.length; index++) {
             const element = scores[index];
-            str += '<p>' + element.lable +
+            str += '<p>' + element.label; +
                 ' ' + element.score + '</p>';
         }
     } else {
