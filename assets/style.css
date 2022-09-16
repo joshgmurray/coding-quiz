@@ -1,0 +1,15 @@
+
+#result {
+    text-align: center;
+    margin: 35px;
+}
+
+#timer {
+    position: absolute;
+    top: 10vh;
+    float: right;
+    right: 0;
+    margin-right: 2vw;
+    font-size: 22px;
+    color: blue;
+}
