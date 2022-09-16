@@ -6,7 +6,7 @@
 
 #timer {
     position: absolute;
-    top: 10vh;
+    top: 1vh;
     float: right;
     right: 0;
     margin-right: 2vw;
@@ -16,4 +16,43 @@
 
 #response {
     margin-top: 15px;
+}
+
+.subtitle {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header {
+    text-align: center;
+    font-size: 60px;
+}
+
+.buttons {
+    text-align: center;
+
+}
+
+.questions {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.answers {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+.scoring {
+    display: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+}
+
+.save {
+    text-align: center;
+    
 }

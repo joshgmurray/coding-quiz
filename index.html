@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Quiz</title>
 
     <link rel="stylesheet" href="./assets/style.css"?
 </head>
 
 
 <body>
-    <div>
+    <div class="header">
+        <header>Coding Quiz</header>
+    </div>
+    <div class="subtitle">
+        <h2>Try to answer the following questions within the time limit! But be careful, if you answer incorrectly you lose time! Dont let the clock hit zero.. Good luck!</h2>
+    </div>
+    <div class="buttons">
         <button id="submit" class="btn">Start Quiz</button>
         <button id="history" class="btn">View High Scores</button>
     </div>
-    <div id="display"></div>
-    <div id ="response"></div>
-    <div id="scoreSave"></div>
-    <div id="high"></div>
-    <div id="result"></div>
+    <div class= "questions" id="display"></div>
+    <div class="answers" id ="response"></div>
+    <div class="save" id="scoreSave"></div>
+    <div class="scoring" id="high"></div>
+    <div class="restart" id="result"></div>
     <div id="timer"></div>
-    <div id="scoreHistory"></div>
+    <div class="history" id="scoreHistory"><p></p></div>
     
     <script src="assets/script.js"></script>
 </body>

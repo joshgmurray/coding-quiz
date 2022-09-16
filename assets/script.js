@@ -116,10 +116,10 @@ var updateQuestion = () => {
 };
 
 function end() {
-    if (high < score || high == 'no score') {
+    if (high >= score || high == 'no score') {
         document.getElementById("scoreSave").innerHTML =
             "<input id='scorename' type='text'/>" +
-            "<p><button onClick='saveScore()'>save</button></p>"
+            "<p><button onClick='saveScore()'>save initials</button></p>"
     }
   document.getElementById("result").innerHTML =
     "<h2>You finished. Your score is <strong>" +
@@ -127,7 +127,8 @@ function end() {
     "/" +
     questions.length +
     "</strong>.</h2>" +
-    "<p><button onClick='restart()' id='restart'>restart</button></p>";
+    "<p><button onClick='restart()' id='restart'>restart</button></p>"
+;
 }
 
 function saveScore() {
@@ -161,7 +162,7 @@ historyBtn.addEventListener("click", function() {
     if (scores.length) {
         for (let index = 0; index < scores.length; index++) {
             const element = scores[index];
-            outputString += '<p>' + element.label +
+            outputString += 'Previous High Score: ' + element.label +
                 ' ' + element.score + '</p>';
         }
     } else {
