@@ -1,19 +1,36 @@
-console.log("Hello");
 var i = 0; 
+var rightAnswers = 0;
 
 var questions = [
     {
         text: "A very useful tool used during development and debugging for printing content to the debugger is:", 
-        answers: ["answer a", "answer b", "answer c", "answer d"],
+        answers: ["1. JavaScript", "2. Terminal/Bash", "3. For Loops", "4. console.log"],
         correctAnswer: 0
     },
     {
-        text: "second question:", 
-        answers: ["answer a", "answer b", "answer c", "answer d"],
+        text: "Commonly used data types DO NOT include:", 
+        answers: ["1. Strings", "2. Booleans", "3. Alerts", "4. Numbers"],
         correctAnswer: 3
-    }    
-]
+    },
+    {
+        text: "Arrays in JavaScript can be used to store:", 
+        answers: ["1. Numbers and Strings", "2. Other Arrays", "3. Booleans", "4. All of the Above"],
+        correctAnswer: 0
+    },
+    {
+        text: "The condition if an if/else statement is enclosed with:", 
+        answers: ["1. Quotes", "2. Curly Brackets", "3. Parenthesis", "4. Square Brackets"],
+        correctAnswer: 1
+    },
+    {
+        text: "String values must be enclosed within  _____ when being assigned to variables.", 
+        answers: ["1. Commas", "2. Curly Brackets", "3. Quotes", "4. Parenthesis"],
+        correctAnswer: 2
+    }                
+];
+
 var generateBtn = document.getElementById("submit")
+
 
 var updateQuestion = () => {
     console.log("button clicked")
@@ -38,6 +55,7 @@ var updateQuestion = () => {
         document.getElementById("display").appendChild(answerEl); 
         
     }
+    
 
 }
 
