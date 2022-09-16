@@ -16,10 +16,11 @@ THEN I can save my initials and score
    
 
 ## Work Completed
-* Created HTML, javascript, and css from scratch to fit the acceptance criteria
+* Created HTML, and javascript from scratch to fit the acceptance criteria. Added styling to create a clean looking URL.
 
 ## Live Link
 
 ## Repo Link
 
 ## Screenshot
+![screenshot](/Screen%20Shot%202022-09-16%20at%204.45.02%20PM.png)
