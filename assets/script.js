@@ -1,6 +1,6 @@
 var i = 0;
 var rightAnswers = 0;
-var TIME_VALUE = 100;
+var TIME_VALUE = 60;
 var time = TIME_VALUE;
 
 var scores = JSON.parse(localStorage.getItem('score')) || [];
@@ -94,12 +94,12 @@ var updateQuestion = () => {
         console.log("answer clicked");
         if (questions[i].correctAnswer === j) {
           console.log("correct");
-          document.getElementById("response").innerHTML = "correct";
+          document.getElementById("response").innerHTML = "Correct!";
           score++;
         } else {
           console.log("incorrect");
           score;
-          document.getElementById("response").innerHTML = "incorrect";
+          document.getElementById("response").innerHTML = "Wrong!";
           time -= 10;
         }
         i++;
@@ -126,7 +126,7 @@ function end() {
     score +
     "/" +
     questions.length +
-    "</strong>. Thank you.</h2>" +
+    "</strong>.</h2>" +
     "<p><button onClick='restart()' id='restart'>restart</button></p>";
 }
 
@@ -146,7 +146,7 @@ function restart() {
   document.getElementById("result").innerHTML = "";
   document.getElementById("response").innerHTML = "";
 
-  document.getElementById("high").innerHTML = "high score: " + high
+  document.getElementById("high").innerHTML = "high score: " + high;
 }
 
 document.getElementById("high").innerHTML = "high score: " + high;
