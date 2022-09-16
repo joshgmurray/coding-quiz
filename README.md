@@ -19,8 +19,8 @@ THEN I can save my initials and score
 * Created HTML, and javascript from scratch to fit the acceptance criteria. Added styling to create a clean looking URL.
 
 ## Live Link
-
+https://joshgmurray.github.io/coding-quiz/
 ## Repo Link
-
+https://github.com/joshgmurray/coding-quiz
 ## Screenshot
-![screenshot](/Screen%20Shot%202022-09-16%20at%204.45.02%20PM.png)
+! [screenshot](/Screen%20Shot%202022-09-16%20at%204.45.02%20PM.png)
